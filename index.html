@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <!-- Start background-video -->
+        <div class="video-background">
+            <video autoplay muted loop id="myVideo">
+                <source src="./img/1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- End background-video -->
+
+        <!-- Start row-->
+        <div class="row">
+        <div class="wrapper d-flex align-items-center justify-content-center vh-100">
+            <div class="col-sm-6 col-md-10 col-xl-6">
+            <h5 class="text-center mb-4  fw-bold animate__animated animate__fadeInDown  animate__delay-.5s title"> Quote of the day</h5>
+            <!-- Start card -->
+            <div class="card border-0 rounded-3 quotes">
+                <!-- Start card-body -->
+                <div class="card-body pt-5 d-flex text-center">
+                    <i class="fas fa-quote-left text-start me-2"></i>
+                    <p  class="card-text mb-0 animate__animated animate__fadeInUp  animate__delay-.5s quote ">When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us</p>
+                    <i class="fas fa-quote-right d-flex align-items-end ms-2"></i>
+                </div>
+                <!-- End card-body -->
+
+                <!-- Start author -->
+                <div class=" me-5 d-flex justify-content-end">
+                    <span class="author fst-italic animate__animated animate__fadeInUp  animate__delay-.5s" id="author">― Helen Keller</span>
+                </div>
+                <!-- End author -->
+
+                <!-- Start social -->
+                <div class="social d-flex justify-content-between align-items-center py-4">
+                    <!-- Start social-icon -->
+                    <div class="social-icon d-flex justify-content-between align-items-center ms-5">
+                        <div class="icon sound border-0 position-relative me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-volume-up "></i>
+                            <span class="tooltip position-absolute d-flex align-items-center justify-content-center">Listen</span>
+                        </div>
+
+                        <div class="icon copy border-0 position-relative me-2 d-flex align-items-center justify-content-center"  onclick="changText(copied)" >
+                            <i class="fas fa-copy "></i>
+                            <span id="copied" class="tooltip  position-absolute d-flex align-items-center justify-content-center">Copy</span>
+                        </div>
+
+                        <div class="icon share  border-0 position-relative me-2 d-flex align-items-center justify-content-center">
+                            <i class="fab fa-facebook-f "></i>
+                            <span class="tooltip position-absolute d-flex align-items-center justify-content-center">Share</span>
+                        </div>
+
+                        <div class="icon heart  border-0 position-relative like me-2 d-flex align-items-center justify-content-center" onclick="changeColor(this)">
+                            <i class="fas fa-heart "></i>
+                            <span class="tooltip position-absolute d-flex align-items-center justify-content-center">Favorite</span>
+                        </div>
+                    </div>
+                    <!-- End social-media -->
+                  
+            
+                        <button class=" me-5 text-capitalize position-relative fw-bold border-0" id="q" >new quote
+                            <div class="star-1 star-style ">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                            </div>
+                            <div class="star-2 star-style">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                            </div>
+                            <div class="star-3 star-style">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                            </div>
+                            <div class="star-4 star-style">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                            </div>
+                            <div class="star-5 star-style">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                            </div>
+                            <div class="star-6 star-style">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                            </div>
+                    </button>
+                    
+                </div>
+                <!-- End social -->
+            </div>
+            <!-- End card -->
+            </div>
+            <!-- End col-sm -->
+        </div>
+        <!-- End wrapper -->
+        </div>
+        <!-- End row -->
+    </div>
+    <!-- End container -->
+</header>
+
+
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>
